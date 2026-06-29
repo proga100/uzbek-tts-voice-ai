@@ -1,0 +1,15 @@
+{
+  "id": "rustamakhmedov/chatterbox-feruza-infer-sweep",
+  "title": "chatterbox-feruza-infer-sweep",
+  "code_file": "chatterbox_feruza_infer.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["rustamakhmedov/feruzaspeech-uzbek-tts"],
+  "competition_sources": [],
+  "kernel_sources": ["rustamakhmedov/chatterbox-feruzaspeech-uzbek-lora"],
+  "model_sources": []
+}

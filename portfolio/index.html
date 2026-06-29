@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uzbek Voice AI — TTS Research & Voice Agent</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --line:#30363d; --txt:#e6edf3;
+    --muted:#8b949e; --accent:#3fb950; --accent2:#58a6ff; --warn:#d29922;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 80px}
+  header h1{font-size:2.1rem;margin:0 0 6px;letter-spacing:-.5px}
+  header p.sub{color:var(--muted);font-size:1.1rem;margin:0 0 28px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 36px}
+  .tag{background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:4px 12px;font-size:.82rem;color:var(--muted)}
+  h2{font-size:1.35rem;margin:44px 0 14px;border-bottom:1px solid var(--line);padding-bottom:8px}
+  p{color:#c9d1d9}
+  .lead{font-size:1.05rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:18px 20px;margin:14px 0}
+  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.demo-grid{grid-template-columns:1fr}}
+  .demo h4{margin:0 0 4px;font-size:.95rem}
+  .demo .uz{color:var(--muted);font-size:.85rem;margin:0 0 10px;font-style:italic}
+  audio{width:100%;margin-top:6px}
+  .badge{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:6px;font-weight:600}
+  .b-best{background:rgba(63,185,80,.15);color:var(--accent);border:1px solid rgba(63,185,80,.4)}
+  .b-ft{background:rgba(88,166,255,.15);color:var(--accent2);border:1px solid rgba(88,166,255,.4)}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600}
+  .ok{color:var(--accent)} .no{color:#f85149} .warn{color:var(--warn)}
+  ul{padding-left:20px} li{margin:6px 0;color:#c9d1d9}
+  a{color:var(--accent2);text-decoration:none} a:hover{text-decoration:underline}
+  .note{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.35);
+    border-radius:10px;padding:14px 16px;color:#e3c171;font-size:.92rem}
+  footer{margin-top:50px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:20px}
+  .metrics{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;flex:1;min-width:120px}
+  .metric .n{font-size:1.5rem;font-weight:700;color:var(--accent)}
+  .metric .l{font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>🎙️ Uzbek Voice AI</h1>
+    <p class="sub">Real-time Uzbek-language voice assistant for farmers — TTS research, model fine-tuning &amp; a streaming voice agent.</p>
+  </header>
+
+  <div class="tags">
+    <span class="tag">Text-to-Speech</span>
+    <span class="tag">VITS / MMS</span>
+    <span class="tag">Speech Recognition</span>
+    <span class="tag">LLM dialog</span>
+    <span class="tag">FastAPI · WebSocket</span>
+    <span class="tag">PyTorch</span>
+    <span class="tag">Kaggle GPU</span>
+    <span class="tag">Low-resource NLP</span>
+  </div>
+
+  <p class="lead">I built a live, streaming voice assistant that lets Uzbek-speaking farmers ask
+  agriculture questions and get spoken answers — then ran a full research track to find (or build)
+  the best Uzbek text-to-speech voice, since Uzbek is a low-resource language with very few options.</p>
+
+  <div class="metrics">
+    <div class="metric"><div class="n">5</div><div class="l">TTS models benchmarked</div></div>
+    <div class="metric"><div class="n">60 h</div><div class="l">studio corpus mined</div></div>
+    <div class="metric"><div class="n">7,080</div><div class="l">fine-tune steps trained</div></div>
+    <div class="metric"><div class="n">&lt;2 s</div><div class="l">target voice latency</div></div>
+  </div>
+
+  <h2>🔊 Listen — Uzbek TTS demos</h2>
+  <p>Same sentences synthesized by the best off-the-shelf model vs. my fine-tuned voice.
+  All audio is generated from text — no human recording.</p>
+
+  <div class="card">
+    <h4 style="margin-top:0">Agronomist greeting</h4>
+    <p class="uz">«Ассалому алайкум, соғ-саломатмисиз? Мен агрономман, қандайсиз?»</p>
+    <div class="demo-grid">
+      <div class="demo">
+        <span class="badge b-best">Best quality · MMS</span>
+        <audio controls src="audio/agronom_base_mms.wav"></audio>
+      </div>
+      <div class="demo">
+        <span class="badge b-ft">My fine-tune · FeruzaSpeech</span>
+        <audio controls src="audio/agronom_finetuned.wav"></audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-grid">
+    <div class="card demo">
+      <h4>Wheat-rust disease</h4>
+      <p class="uz">«Буғдой майдонида қўнғир занг касаллиги кўринди.»</p>
+      <span class="badge b-best">MMS</span>
+      <audio controls src="audio/mms2_rust.wav"></audio>
+      <span class="badge b-ft" style="margin-top:8px">Fine-tune</span>
+      <audio controls src="audio/ft_rust.wav"></audio>
+    </div>
+    <div class="card demo">
+      <h4>Dosage with numbers</h4>
+      <p class="uz">«Фунгицидни йигирма беш фоиз концентрацияда, бир гектарга икки литр солинг.»</p>
+      <span class="badge b-best">MMS</span>
+      <audio controls src="audio/mms2_dose.wav"></audio>
+      <span class="badge b-ft" style="margin-top:8px">Fine-tune</span>
+      <audio controls src="audio/ft_dose.wav"></audio>
+    </div>
+  </div>
+
+  <h2>🧭 The approach</h2>
+  <ul>
+    <li><b>Built the voice agent first</b> — a streaming pipeline (speech-in → recognition → LLM →
+      speech-out) with voice-activity detection, instant filler words, and barge-in (the user can
+      interrupt), targeting under ~2 s to first audio.</li>
+    <li><b>Benchmarked Uzbek TTS</b> — Uzbek has almost no good open voices, so I tested 5 options
+      and A/B-compared the audio.</li>
+    <li><b>Built a 60-hour training corpus</b> — cloned and cleaned the FeruzaSpeech studio dataset,
+      automated end-to-end training on Kaggle GPUs via the API.</li>
+    <li><b>Fine-tuned a VITS/MMS model</b> on 5.2 h of clean single-speaker Uzbek (7,080 steps,
+      ~4 h on a Tesla P100), debugging a deep stack of environment issues (CUDA/GPU-arch
+      mismatches, library version conflicts, GAN training quirks).</li>
+    <li><b>Measured honestly</b> — the strong base model actually beat my fine-tune on limited data,
+      a realistic and useful negative result.</li>
+  </ul>
+
+  <h2>📊 Models evaluated</h2>
+  <table>
+    <tr><th>Model</th><th>Approach</th><th>Result</th></tr>
+    <tr><td>Meta MMS (Uzbek, Cyrillic)</td><td>Off-the-shelf VITS</td><td class="ok">✅ Best quality</td></tr>
+    <tr><td>MMS + FeruzaSpeech</td><td>My VITS fine-tune</td><td class="warn">◑ Adapted voice, slightly rougher</td></tr>
+    <tr><td>Chatterbox v3</td><td>LoRA fine-tune</td><td class="no">✗ Poor (no Uzbek base)</td></tr>
+    <tr><td>Community Latin VITS</td><td>Off-the-shelf</td><td class="no">✗ Garbled</td></tr>
+    <tr><td>Yandex SpeechKit «nigora»</td><td>Commercial API</td><td class="ok">✅ Production choice</td></tr>
+  </table>
+
+  <h2>🛠️ Tech stack</h2>
+  <p>Python · PyTorch · HuggingFace Transformers · VITS / Meta MMS · Chatterbox · FastAPI +
+  WebSockets · gRPC (Yandex SpeechKit STT/TTS v3) · Silero/energy VAD · Kaggle GPU automation
+  (Kaggle API) · soundfile / datasets.</p>
+
+  <h2>💡 Key takeaways</h2>
+  <ul>
+    <li><b>Right tool &gt; biggest tool.</b> A small purpose-built VITS beat a 0.5 B voice-cloning
+      model for a single-speaker language task.</li>
+    <li><b>Start from a model that already knows the language.</b> Teaching Uzbek from zero failed;
+      adapting an Uzbek-capable base was the workable path.</li>
+    <li><b>Licensing is a first-class constraint.</b> The best open weights are non-commercial
+      (CC-BY-NC) — production needs a commercial voice or owned data.</li>
+  </ul>
+
+  <div class="note">
+    ⚠️ Research/educational project. Open Uzbek datasets &amp; models used here are
+    <b>non-commercial (CC-BY-NC / academic)</b> licensed; the audio demos are for evaluation only.
+  </div>
+
+  <footer>
+    Code &amp; notebooks: <a href="https://github.com/proga100/uzbek-tts-voice-ai">GitHub</a>
+    &nbsp;·&nbsp; Training runs &amp; weights: Kaggle
+    &nbsp;·&nbsp; Built by Rustamjon Akhmedov
+  </footer>
+
+</div>
+</body>
+</html>

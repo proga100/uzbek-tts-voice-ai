@@ -1,0 +1,15 @@
+{
+  "id": "rustamakhmedov/mms-uzbek-feruza-finetune",
+  "title": "mms-uzbek-feruza-finetune",
+  "code_file": "mms_uzbek_feruza_finetune.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["rustamakhmedov/feruzaspeech-uzbek-tts"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

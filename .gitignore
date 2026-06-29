@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+venv/
+*.egg-info/
+feruza_full_clone/
+outputs/feruza_finetuned/
+
+# model weights live on Kaggle (too big for GitHub)
+mms_feruza_model/mms_feruza_out/model.safetensors
+*.safetensors
