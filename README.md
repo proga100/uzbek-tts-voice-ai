@@ -58,3 +58,21 @@ commercially-licensed data + a permissive base model:
 2. **Base model: Piper (VITS, MIT)** — commercial-safe (instead of MMS/CC-BY-NC).
 3. Train (same idea as this notebook), evaluate vs the current Yandex `nigora`, then serve
    behind the app's TTS provider interface.
+
+## Attribution & Credits
+
+This project builds on the following open work. Audio samples in this repo are derivatives,
+shared here for **non-commercial research/demonstration** only, with attribution:
+
+- **Meta MMS-TTS** — base Uzbek voice (`facebook/mms-tts-uzb-script_cyrillic`),
+  licensed **CC-BY-NC 4.0**. © Meta AI / Massively Multilingual Speech project.
+- **FeruzaSpeech** — Uzbek read-speech corpus (`k2speech/FeruzaSpeech`),
+  available for **academic research** only. Credit to its authors.
+- **finetune-hf-vits** — VITS/MMS fine-tuning toolkit by Yoach Lacombe
+  (`github.com/ylacombe/finetune-hf-vits`).
+- **Chatterbox** (Resemble AI, MIT) and **Common Voice** (Mozilla, CC0) — used in early
+  benchmarking.
+
+No model weights or datasets are redistributed in this repository — only the author's own
+code and short generated demo clips. The fine-tuned weights live on Kaggle.
+
