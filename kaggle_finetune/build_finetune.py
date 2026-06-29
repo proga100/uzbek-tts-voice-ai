@@ -147,10 +147,10 @@ code("""
 """)
 
 md("""
-## 7. Inference — Uzbek agriculture sentences in the fine-tuned voice
+## 7. Inference — Uzbek test sentences in the fine-tuned voice
 
-Uses a FeruzaSpeech clip as the speaker reference, then synthesizes domain sentences
-(numbers, %, agro terms, the hard letters `oʻ gʻ q ng`).
+Uses a FeruzaSpeech clip as the speaker reference, then synthesizes test sentences
+(numbers, %, the hard letters `oʻ gʻ q ng`).
 """)
 code("""
 import os, glob, shutil
@@ -160,9 +160,9 @@ shutil.copy(ref_src, "/kaggle/working/chatterbox-finetuning/speaker_reference/re
 
 SENTENCES = [
     "Salom! Men ovozli yordamchisiman.",
-    "Pomidor bargida sariq dogʻlar paydo boʻldi.",
-    "Fungitsidni 25 foiz konsentratsiyada, bir gektarga ikki litr soling.",
-    "Bugʻdoy maydonida qoʻngʻir zang kasalligi koʻrindi.",
+    "Toshkent koʻchalarida yangi avtobuslar qatnovni boshladi.",
+    "Chiptalar narxi 25 foizga tushdi, eng arzoni 10 ming soʻm.",
+    "Yangi koʻprik qurilishi 15 oyda yakunlandi.",
 ]
 # ADJUST: confirm inference.py CLI/vars after first run; here we edit TEXT/AUDIO and run.
 import re
@@ -185,7 +185,7 @@ if os.path.exists("/kaggle/working/uz_finetuned.wav"):
 
 md("""
 ## Next steps
-- Listen to `uz_finetuned.wav`. Judge Uzbek pronunciation + the agro terms/numbers.
+- Listen to `uz_finetuned.wav`. Judge Uzbek pronunciation + the hard letters/numbers.
 - Raise the subset (step 3) + epochs (step 5) for quality.
 - **Not for commercial production** (research license). Production = own recorded narrator
   + Chatterbox (MIT base) + commercial data.

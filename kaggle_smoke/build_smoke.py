@@ -69,7 +69,7 @@ except Exception:
 md("## 5. Zero-shot Uzbek (the experiment) — try uz, tr, and no tag")
 code("""
 import torchaudio, traceback
-UZ = "Salom! Pomidor bargida sariq dogʻlar paydo boʻldi. Nima qilishim kerak?"
+UZ = "Salom! Bugun sizga qanday yordam bera olaman?"
 for tag in ["uz","tr",None]:
     try:
         wav = model.generate(UZ) if tag is None else model.generate(UZ, language_id=tag)

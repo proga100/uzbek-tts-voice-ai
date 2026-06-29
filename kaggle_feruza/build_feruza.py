@@ -168,7 +168,7 @@ ref = max(glob.glob("/kaggle/working/chatterbox-finetuning/MyTTSDataset/wavs/*.w
 os.makedirs("/kaggle/working/chatterbox-finetuning/speaker_reference", exist_ok=True)
 shutil.copy(ref, "/kaggle/working/chatterbox-finetuning/speaker_reference/reference.wav")
 
-TEXT = "Salom! Pomidor bargida sariq dogʻlar paydo boʻldi. Nima qilishim kerak?"
+TEXT = "Salom! Bugun sizga qanday yordam bera olaman?"
 inf="/kaggle/working/chatterbox-finetuning/inference.py"; src=open(inf).read()
 src=re.sub(r'TEXT_TO_SAY\\s*=\\s*.*', f'TEXT_TO_SAY = {TEXT!r}', src, count=1)
 src=re.sub(r'AUDIO_PROMPT\\s*=\\s*.*', 'AUDIO_PROMPT = "./speaker_reference/reference.wav"', src, count=1)

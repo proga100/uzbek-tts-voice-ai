@@ -5972,12 +5972,12 @@
 ,{"stream_name":"stderr","time":6353.125383606,"data":"Downloading: \"https://github.com/snakers4/silero-vad/zipball/master\" to /root/.cache/torch/hub/master.zip\n"}
 ,{"stream_name":"stderr","time":6353.125415674,"data":"\n"}
 ,{"stream_name":"stderr","time":6353.125421797,"data":"Downloading: \"https://github.com/snakers4/silero-vad/zipball/master\" to /root/.cache/torch/hub/master.zip\n"}
-,{"stream_name":"stderr","time":6355.103533961,"data":"INFO:Chatterbox-Inference:Synthesizing (2/3): Pomidor bargida sariq dogʻlar paydo boʻldi.\n"}
-,{"stream_name":"stdout","time":6355.103595836,"data":"2026-06-28 09:53:29 - Chatterbox-Inference - INFO - Synthesizing (2/3): Pomidor bargida sariq dogʻlar paydo boʻldi.\n"}
-,{"stream_name":"stderr","time":6355.312914706,"data":"INFO:Chatterbox-Inference:Synthesizing (2/3): Pomidor bargida sariq dogʻlar paydo boʻldi.\n"}
+,{"stream_name":"stderr","time":6355.103533961,"data":"INFO:Chatterbox-Inference:Synthesizing (2/3): Bugun sizga qanday yordam bera olaman?\n"}
+,{"stream_name":"stdout","time":6355.103595836,"data":"2026-06-28 09:53:29 - Chatterbox-Inference - INFO - Synthesizing (2/3): Bugun sizga qanday yordam bera olaman?\n"}
+,{"stream_name":"stderr","time":6355.312914706,"data":"INFO:Chatterbox-Inference:Synthesizing (2/3): Bugun sizga qanday yordam bera olaman?\n"}
 ,{"stream_name":"stderr","time":6355.312950746,"data":"\n"}
-,{"stream_name":"stderr","time":6355.312955529,"data":"INFO:Chatterbox-Inference:Synthesizing (2/3): Pomidor bargida sariq dogʻlar paydo boʻldi.\n"}
-,{"stream_name":"stdout","time":6355.312998871,"data":"2026-06-28 09:53:29 - Chatterbox-Inference - INFO - Synthesizing (2/3): Pomidor bargida sariq dogʻlar paydo boʻldi.\n"}
+,{"stream_name":"stderr","time":6355.312955529,"data":"INFO:Chatterbox-Inference:Synthesizing (2/3): Bugun sizga qanday yordam bera olaman?\n"}
+,{"stream_name":"stdout","time":6355.312998871,"data":"2026-06-28 09:53:29 - Chatterbox-Inference - INFO - Synthesizing (2/3): Bugun sizga qanday yordam bera olaman?\n"}
 ,{"stream_name":"stdout","time":6358.467169047,"data":"2026-06-28 09:53:33 - Chatterbox-Inference - INFO - Synthesizing (3/3): Nima qilishim kerak?\n"}
 ,{"stream_name":"stderr","time":6358.467327636,"data":"INFO:Chatterbox-Inference:Synthesizing (3/3): Nima qilishim kerak?\n"}
 ,{"stream_name":"stdout","time":6358.670219542,"data":"2026-06-28 09:53:33 - Chatterbox-Inference - INFO - Synthesizing (3/3): Nima qilishim kerak?\n"}

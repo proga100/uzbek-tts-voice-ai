@@ -2,7 +2,7 @@
 
 No retraining. Mounts the v11 kernel output (trained LoRA adapter + Turbo base) and the
 FeruzaSpeech dataset (for fresh reference clips), then sweeps reference-clip x temperature
-on real Uzbek agriculture sentences. Goal: find the best synthesis settings before
+on Uzbek test sentences. Goal: find the best synthesis settings before
 spending GPU-hours on a bigger training run.
 
 Inputs (attach in kernel-metadata.json):
@@ -19,7 +19,7 @@ md("""
 # FeruzaSpeech voice — inference-only quality sweep (no retrain)
 
 Loads the v11-trained LoRA adapter + Turbo base from the attached kernel output, and
-sweeps **reference clip x temperature** on Uzbek agriculture sentences. Listen to the grid
+sweeps **reference clip x temperature** on Uzbek test sentences. Listen to the grid
 and pick the best settings.
 """)
 
@@ -126,7 +126,7 @@ print("engine loaded on", DEVICE)
 """)
 
 md("""
-## 5. Sweep reference x temperature on agriculture sentences
+## 5. Sweep reference x temperature on test sentences
 
 Generates a labelled grid of wavs. Listen and tell me which (ref, temp) sounds best.
 """)
@@ -134,9 +134,9 @@ code("""
 import soundfile as sf, traceback
 
 SENTENCES = {
-  "greet": "Salom! Pomidor bargida sariq dogʻlar paydo boʻldi. Nima qilishim kerak?",
-  "rust":  "Bugʻdoy maydonida qoʻngʻir zang kasalligi koʻrindi.",
-  "dose":  "Fungitsidni 25 foiz konsentratsiyada, bir gektarga ikki litr soling.",
+  "greet": "Assalomu alaykum, sogʻ-salomatmisiz? Bugun qanday yordam bera olaman?",
+  "city":  "Toshkent koʻchalarida yangi avtobuslar qatnovni boshladi.",
+  "price": "Chiptalar narxi 25 foizga tushdi, eng arzoni 10 ming soʻm.",
 }
 OUT="/kaggle/working/sweep"; os.makedirs(OUT, exist_ok=True)
 SR = engine.sr
@@ -170,7 +170,7 @@ for t in [0.4, 0.6, 0.8]:
         w=synth(SENTENCES["greet"], best_ref, temperature=t, repetition_penalty=1.2)
         p=f"{OUT}/greet_ref1_t{int(t*10):02d}.wav"; sf.write(p,w,SR); results.append(p); print("ok",p)
     except Exception: traceback.print_exc()
-# (c) the 3 agro sentences with ref1 @ temp 0.6
+# (c) the 3 test sentences with ref1 @ temp 0.6
 for k,txt in SENTENCES.items():
     try:
         w=synth(txt, best_ref, temperature=0.6, repetition_penalty=1.2)

@@ -189,7 +189,7 @@ MODEL_DIR = "/kaggle/working/mms-uzb-feruza"
 model = VitsModel.from_pretrained(MODEL_DIR)
 tok = AutoTokenizer.from_pretrained(MODEL_DIR)
 
-text = "Salom! Men ovozli yordamchisiman. Pomidor bargida sariq dogʻlar bormi?"
+text = "Salom! Men ovozli yordamchisiman. Sizga qanday yordam bera olaman?"
 inputs = tok(text, return_tensors="pt")
 with torch.no_grad():
     wav = model(**inputs).waveform[0].cpu().numpy()

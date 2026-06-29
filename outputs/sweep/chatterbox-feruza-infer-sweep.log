@@ -201,8 +201,8 @@
 ,{"stream_name":"stderr","time":409.962773846,"data":"\n"}
 ,{"stream_name":"stderr","time":409.962781607,"data":"WARNING:root:Reference mel length is not equal to 2 * reference token length.\n"}
 ,{"stream_name":"stderr","time":409.962784485,"data":"\n"}
-,{"stream_name":"stdout","time":410.106909548,"data":"ok /kaggle/working/sweep/sent_rust_ref1_t06.wav\n"}
-,{"stream_name":"stdout","time":416.013918294,"data":"ok /kaggle/working/sweep/sent_dose_ref1_t06.wav\n"}
+,{"stream_name":"stdout","time":410.106909548,"data":"ok /kaggle/working/sweep/sent_city_ref1_t06.wav\n"}
+,{"stream_name":"stdout","time":416.013918294,"data":"ok /kaggle/working/sweep/sent_price_ref1_t06.wav\n"}
 ,{"stream_name":"stdout","time":416.013955174,"data":"\n"}
 ,{"stream_name":"stdout","time":416.013961608,"data":"GENERATED 10 clips in /kaggle/working/sweep\n"}
 ,{"stream_name":"stdout","time":416.168141186,"data":"greet_ref1_t04.wav\n"}
@@ -211,9 +211,9 @@
 ,{"stream_name":"stdout","time":416.210695174,"data":"greet_ref2_t06.wav\n"}
 ,{"stream_name":"stdout","time":416.219491601,"data":"greet_ref3_t06.wav\n"}
 ,{"stream_name":"stdout","time":416.230744836,"data":"greet_ref_v11_t06.wav\n"}
-,{"stream_name":"stdout","time":416.243180378,"data":"sent_dose_ref1_t06.wav\n"}
+,{"stream_name":"stdout","time":416.243180378,"data":"sent_price_ref1_t06.wav\n"}
 ,{"stream_name":"stdout","time":416.250514864,"data":"sent_greet_ref1_t06.wav\n"}
-,{"stream_name":"stdout","time":416.255627026,"data":"sent_rust_ref1_t06.wav\n"}
+,{"stream_name":"stdout","time":416.255627026,"data":"sent_city_ref1_t06.wav\n"}
 ,{"stream_name":"stderr","time":422.547501449,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
 ,{"stream_name":"stderr","time":422.547547224,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
 ,{"stream_name":"stderr","time":422.741160875,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}

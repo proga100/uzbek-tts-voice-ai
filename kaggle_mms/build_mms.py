@@ -160,7 +160,7 @@ cfg = {
   "eval_split_name": "train",
   "override_speaker_embeddings": False,
 
-  "full_generation_sample_text": "Буғдой майдонида қўнғир занг касаллиги кўринди.",
+  "full_generation_sample_text": "Тошкент кўчаларида янги автобуслар қатнови бошланди.",
   "max_duration_in_seconds": 12,
   "min_duration_in_seconds": 1.5,
   "max_tokens_length": 500,
@@ -199,7 +199,7 @@ if r.returncode != 0: raise RuntimeError("VITS finetuning failed")
 print("training done")
 """)
 
-md("## 7. Inference — agriculture sentences in the fine-tuned FeruzaSpeech voice")
+md("## 7. Inference — Uzbek test sentences in the fine-tuned FeruzaSpeech voice")
 code("""
 import os, numpy as np, scipy.io.wavfile as wav, torch
 from transformers import VitsModel, AutoTokenizer
@@ -207,9 +207,9 @@ M="/kaggle/working/mms_feruza_out"
 model=VitsModel.from_pretrained(M); tok=AutoTokenizer.from_pretrained(M)
 sr=model.config.sampling_rate
 sents={
- "greet":"Салом! Помидор баргида сариқ доғлар пайдо бўлди. Нима қилишим керак?",
- "rust":"Буғдой майдонида қўнғир занг касаллиги кўринди.",
- "dose":"Фунгицидни йигирма беш фоиз концентрацияда, бир гектарга икки литр солинг.",
+ "greet":"Ассалому алайкум, соғ-саломатмисиз? Бугун қандай ёрдам бера оламан?",
+ "city":"Тошкент кўчаларида янги автобуслар қатнови бошланди.",
+ "price":"Чипталар нархи йигирма беш фоизга тушди, энг арзони ўн минг сўм.",
  "greet2":"Ассалому алайкум! Мен овозли ёрдамчисиман.",
 }
 os.makedirs("/kaggle/working/samples", exist_ok=True)
